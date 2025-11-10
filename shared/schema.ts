@@ -31,7 +31,7 @@ export const insertSubdomainSchema = createInsertSchema(subdomains).omit({
   name: z.string()
     .min(1, "Nama subdomain harus diisi")
     .max(63, "Nama subdomain maksimal 63 karakter")
-    .regex(/^[a-zA-Z0-9-]+$/, "Hanya huruf, angka, dan strip (-) yang diperbolehkan")
+    .regex(/^[a-zA-Z0-9.-]+$/, "Hanya huruf, angka, titik (.) dan strip (-) yang diperbolehkan")
     .refine(name => !name.startsWith('-') && !name.endsWith('-'), "Nama subdomain tidak boleh dimulai atau diakhiri dengan strip"),
   type: z.enum(["A", "CNAME", "AAAA"], { required_error: "Tipe record harus dipilih" }),
   target: z.string().min(1, "Target harus diisi"),
