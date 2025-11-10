@@ -43,13 +43,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     // Validate subdomain name format
-    const subdomainRegex = /^[a-z0-9]([a-z0-9-]*[a-z0-9])?$/;
+    const subdomainRegex = /^[a-z0-9]([a-z0-9.-]*[a-z0-9])?$/;
     if (!subdomainRegex.test(name)) {
       return res.status(200).json({
         success: true,
         available: false,
         reason: 'INVALID_FORMAT',
-        message: 'Nama subdomain tidak valid. Gunakan huruf kecil, angka, dan tanda hubung saja.'
+        message: 'Nama subdomain tidak valid. Gunakan huruf kecil, angka, titik, dan tanda hubung saja.'
       });
     }
 
