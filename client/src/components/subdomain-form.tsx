@@ -179,7 +179,7 @@ export default function SubdomainForm({ onSuccess, subdomainCount }: SubdomainFo
                   </div>
                 </FormControl>
                 <FormDescription className="text-gray-400">
-                  Hanya huruf, angka, dan tanda strip (-) yang diperbolehkan
+                  Hanya huruf, angka, titik, dan tanda strip (-) yang diperbolehkan
                   {field.value && <span className="block text-emerald-400 font-medium mt-1">{field.value}.domku.my.id</span>}
                 </FormDescription>
                 {availabilityStatus.message && (
